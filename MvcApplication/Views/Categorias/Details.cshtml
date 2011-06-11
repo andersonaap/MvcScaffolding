@@ -1,0 +1,23 @@
+@model MvcApplication.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">@Model.Nome</div>
+
+    <div class="display-label">Receitas</div>
+    <div class="display-field">@(Model.Receitas == null ? "None" : Model.Receitas.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CategoriaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

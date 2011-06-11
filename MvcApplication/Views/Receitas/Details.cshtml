@@ -1,0 +1,26 @@
+@model MvcApplication.Models.Receita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Receita</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">@Model.Nome</div>
+
+    <div class="display-label">TempoPreparo</div>
+    <div class="display-field">@Model.TempoPreparo</div>
+
+    <div class="display-label">Categoria</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Categoria).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ReceitaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

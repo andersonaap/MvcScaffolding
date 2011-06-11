@@ -1,0 +1,41 @@
+@model IEnumerable<MvcApplication.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Receitas
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategoriaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategoriaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategoriaId })
+        </td>
+        <td>
+			@item.Nome
+        </td>
+        <td>
+			@(item.Receitas == null ? "None" : item.Receitas.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+
